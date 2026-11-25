@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Infinity | Appointment Manager</title>
+<link rel="stylesheet" href="css/admin.css">
+<style>
+body{margin:0;background:#f7f4ef;color:#251d18;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:1200px;margin:auto;padding:24px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-weight:900}.muted{opacity:.65}
+.toolbar,.stats,.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.toolbar{margin:22px 0}
+button,input,select{font:inherit}
+button{border:0;border-radius:10px;padding:11px 15px;cursor:pointer;font-weight:700}
+input,select{padding:11px 12px;border:1px solid #ddd;border-radius:10px;background:#fff}
+.datebar{display:flex;align-items:center;gap:12px}.datebar h2{margin:0}
+.stats{margin:18px 0}.stat{background:#fff;border:1px solid #eee;border-radius:16px;padding:16px 20px;min-width:130px}.stat b{display:block;font-size:25px}
+.grid{display:grid;grid-template-columns:1.6fr .9fr;gap:18px}
+.card{background:#fff;border:1px solid #eee;border-radius:18px;overflow:hidden}
+.card h3{padding:18px;margin:0;border-bottom:1px solid #eee}
+table{width:100%;border-collapse:collapse}th,td{padding:14px;border-bottom:1px solid #eee;text-align:left;font-size:14px}
+.status{padding:5px 8px;border-radius:999px;font-size:12px;font-weight:800}.pending{background:#fff3cd}.confirmed{background:#dff7e5}.cancelled{background:#ffe1e1}.completed{background:#e8e5ff}
+.detail{padding:20px;min-height:250px}.detail h2{margin-top:0}.row{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #eee}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.empty{padding:35px;text-align:center;opacity:.6}
+@media(max-width:850px){.grid{grid-template-columns:1fr}th:nth-child(4),td:nth-child(4){display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<div><div class="brand">∞ INFINITY THE FAMILY SALON</div><h1>Appointment Manager</h1><div class="muted">Staff workspace</div></div>
+<button id="logout">Logout</button>
+</header>
+
+<div class="toolbar">
+<div class="datebar"><button id="prev">←</button><h2 id="dateTitle"></h2><button id="next">→</button><button id="today">Today</button></div>
+</div>
+
+<div class="stats">
+<div class="stat"><span>Selected day</span><b id="dayCount">0</b></div>
+<div class="stat"><span>Pending</span><b id="pending">0</b></div>
+<div class="stat"><span>Confirmed</span><b id="confirmed">0</b></div>
+<div class="stat"><span>Completed</span><b id="completed">0</b></div>
+</div>
+
+<div class="filters">
+<input id="search" placeholder="Search customer / phone / booking ID">
+<select id="status"><option value="all">All status</option><option>pending</option><option>confirmed</option><option>completed</option><option>cancelled</option></select>
+<select id="audience"><option value="all">All customers</option><option>men</option><option>women</option><option>kids</option></select>
+</div>
+
+<div class="grid" style="margin-top:18px">
+<section class="card"><h3>Appointments</h3><div id="tableWrap"></div></section>
+<aside class="card"><h3>Appointment Details</h3><div class="detail" id="detail"><div class="empty">Select an appointment.</div></div></aside>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/appointment-manager.js"></script>
+</body>
+</html>

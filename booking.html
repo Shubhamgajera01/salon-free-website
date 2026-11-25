@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book an appointment at Infinity The Family Salon, Ahmedabad.">
+  <title>Book Appointment | Infinity The Family Salon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/booking.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Book Appointment | Infinity The Family Salon">
+<meta property="og:description" content="Hair, beauty and grooming services for the whole family.">
+<meta property="og:image" content="assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://YOUR-DOMAIN.example/booking.html">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#241b16">
+</head>
+<body>
+  <header class="booking-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">∞</span>
+      <span><strong>INFINITY</strong><small>THE FAMILY SALON</small></span>
+    </a>
+    <a href="index.html" class="back-link">← Back to website</a>
+  </header>
+
+  <main class="booking-page">
+    <div class="booking-intro">
+      <p class="eyebrow"><span></span> APPOINTMENT</p>
+      <h1>Let's make<br><em>you feel amazing.</em></h1>
+      <p>Choose your service, find a convenient time and send us your appointment request.</p>
+
+      <div class="booking-note">
+        <span>∞</span>
+        <div>
+          <strong>Infinity The Family Salon</strong>
+          <small>Shaid Circle · Ahmedabad</small>
+        </div>
+      </div>
+    </div>
+
+    <section class="booking-card">
+      <div class="progress">
+        <div class="progress-step active" data-progress="1"><span>01</span><small>Service</small></div>
+        <i></i>
+        <div class="progress-step" data-progress="2"><span>02</span><small>Date & Time</small></div>
+        <i></i>
+        <div class="progress-step" data-progress="3"><span>03</span><small>Your Details</small></div>
+      </div>
+
+      <form id="bookingForm" novalidate>
+        <div class="form-step active" data-step="1">
+          <div class="step-heading">
+            <span>STEP 01</span>
+            <h2>What are you looking for?</h2>
+            <p>Choose who the appointment is for and then select a service.</p>
+          </div>
+
+          <label class="field-label">Booking for</label>
+          <div class="choice-grid audience-grid">
+            <button type="button" class="choice active" data-audience="Men"><span>♂</span><strong>Men</strong><small>Hair & grooming</small></button>
+            <button type="button" class="choice" data-audience="Women"><span>♀</span><strong>Women</strong><small>Hair & beauty</small></button>
+            <button type="button" class="choice" data-audience="Kids"><span>✦</span><strong>Kids</strong><small>Fun & fresh</small></button>
+          </div>
+
+          <label class="field-label service-label">Choose service</label>
+          <div class="service-options" id="serviceOptions"></div>
+
+          <div class="step-actions">
+            <span class="small-note">Prices shown are demo values for this version.</span>
+            <button type="button" class="next-btn" data-next="2">Continue <span>→</span></button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="2">
+          <div class="step-heading">
+            <span>STEP 02</span>
+            <h2>Pick your moment.</h2>
+            <p>Choose a preferred date and available-looking demo time.</p>
+          </div>
+
+          <div class="date-time-grid">
+            <div>
+              <label class="field-label" for="appointmentDate">Preferred date</label>
+              <input id="appointmentDate" type="date" required>
+              <small class="input-help">Appointments are subject to salon confirmation.</small>
+            </div>
+            <div>
+              <label class="field-label">Preferred time</label>
+              <div class="time-grid" id="timeGrid"></div>
+            </div>
+          </div>
+
+          <div class="selected-summary" id="selectedSummary"></div>
+
+          <div class="step-actions">
+            <button type="button" class="back-btn" data-back="1">← Back</button>
+            <button type="button" class="next-btn" data-next="3">Continue <span>→</span></button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="3">
+          <div class="step-heading">
+            <span>STEP 03</span>
+            <h2>Almost there.</h2>
+            <p>Tell us where we can reach you for confirmation.</p>
+          </div>
+
+          <div class="details-grid">
+            <label>
+              <span class="field-label">Full name</span>
+              <input id="customerName" type="text" placeholder="Your name" required>
+            </label>
+            <label>
+              <span class="field-label">Mobile number</span>
+              <input id="customerPhone" type="tel" inputmode="numeric" placeholder="10-digit mobile number" maxlength="10" required>
+            </label>
+            <label class="full">
+              <span class="field-label">Email <small>(optional)</small></span>
+              <input id="customerEmail" type="email" placeholder="you@example.com">
+            </label>
+            <label class="full">
+              <span class="field-label">Anything we should know? <small>(optional)</small></span>
+              <textarea id="customerNote" rows="4" placeholder="Special request, preferred stylist, occasion..."></textarea>
+            </label>
+          </div>
+
+          <div class="final-summary" id="finalSummary"></div>
+
+          <div class="step-actions">
+            <button type="button" class="back-btn" data-back="2">← Back</button>
+            <button type="submit" class="confirm-btn">Request Appointment <span>↗</span></button>
+          </div>
+        </div>
+      </form>
+
+      <div class="success-screen" id="successScreen">
+        <div class="success-icon">✓</div>
+        <p class="eyebrow"><span></span> REQUEST RECEIVED</p>
+        <h2>You're on the list.<br><em>See you soon.</em></h2>
+        <p id="successMessage">Your appointment request has been recorded for salon confirmation.</p>
+        <div class="success-details" id="successDetails"></div>
+        <div class="success-actions">
+          <a href="index.html" class="dark-btn">Back to Home</a>
+          <a id="successWhatsApp" href="#" target="_blank" rel="noopener" class="wa-btn">Confirm on WhatsApp ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="notifications/templates.js"></script>\n<script src="js/booking.js"></script>
+<div id="notificationActions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+<a id="customerWhatsApp" class="action" target="_blank" rel="noopener">WhatsApp Confirmation</a>
+<a id="customerEmail" class="action">Email Confirmation</a>
+</div>\n<script src="js/pwa.js"></script>
+</body>
+</html>

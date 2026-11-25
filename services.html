@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Infinity The Family Salon services and demo pricing for hair, grooming, beauty and special looks.">
+  <title>Services & Pricing | Infinity The Family Salon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/services.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#241b16">
+</head>
+<body>
+  <div class="top-strip">✦ Premium family salon experience · By appointment & walk-in welcome</div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html" aria-label="Infinity The Family Salon home">
+      <span class="brand-mark">∞</span>
+      <span><strong>INFINITY</strong><small>The Family Salon</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a class="active" href="services.html">Services</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="nav-book" href="booking.html">Book Appointment <span>→</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="services-hero">
+      <div class="eyebrow">THE INFINITY MENU</div>
+      <h1>Good hair. Great mood.<br><em>Infinite confidence.</em></h1>
+      <p>From everyday cuts to complete beauty looks, discover services designed for men, women and kids.</p>
+      <div class="hero-pills">
+        <span>Hair</span><span>Grooming</span><span>Beauty</span><span>Special Looks</span>
+      </div>
+    </section>
+
+    <section class="services-shell">
+      <div class="services-toolbar">
+        <div class="category-tabs" role="tablist" aria-label="Service categories">
+          <button class="category-btn active" data-category="all">All Services</button>
+          <button class="category-btn" data-category="men">Men</button>
+          <button class="category-btn" data-category="women">Women</button>
+          <button class="category-btn" data-category="kids">Kids</button>
+        </div>
+        <label class="service-search">
+          <span>⌕</span>
+          <input id="serviceSearch" type="search" placeholder="Search a service..." aria-label="Search services">
+        </label>
+      </div>
+
+      <div class="service-grid" id="serviceGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <div>✂</div>
+        <h3>No service found</h3>
+        <p>Try another search or category.</p>
+      </div>
+    </section>
+
+    <section class="price-note">
+      <div>
+        <span class="eyebrow">A LITTLE NOTE</span>
+        <h2>Prices are simple.<br><em>The experience is not.</em></h2>
+      </div>
+      <p>These are demo prices for presentation. Final rates, offers and service availability can be updated before launch.</p>
+      <a class="gold-btn" href="booking.html">Book Your Visit <span>→</span></a>
+    </section>
+
+    <section class="quick-book">
+      <div>
+        <span class="eyebrow">READY WHEN YOU ARE</span>
+        <h2>Choose your look.<br><em>We'll handle the rest.</em></h2>
+      </div>
+      <a href="booking.html" class="dark-btn">Start Booking <span>→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="brand-mark">∞</span><strong>INFINITY</strong><small>The Family Salon</small></div>
+    <p>© <span id="year"></span> Infinity The Family Salon. All rights reserved.</p>
+    <a href="booking.html">Book Appointment →</a>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/services.js"></script>
+<script src="js/conversion.js"></script><script src="js/pwa.js"></script>
+</body>
+</html>

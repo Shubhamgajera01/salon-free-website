@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Infinity | Notifications</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<main style="max-width:850px;margin:50px auto;padding:24px">
+<h1>Notification Center</h1>
+<p>Production-ready notification templates for appointment requests.</p>
+<div id="content"></div>
+</main>
+<script src="notifications/templates.js"></script>
+<script>
+const b=JSON.parse(localStorage.getItem("infinity_last_booking")||"null");
+const c=document.getElementById("content");
+if(!b){c.innerHTML="<p>No demo booking found. Submit an appointment first.</p>";}
+else{
+ const owner=InfinityNotifications.ownerAlert(b);
+ const customer=InfinityNotifications.bookingConfirmation(b);
+ c.innerHTML=`
+ <h2>Customer Confirmation</h2><pre>${customer.replace(/</g,"&lt;")}</pre>
+ <h2>Owner Alert</h2><pre>${owner.replace(/</g,"&lt;")}</pre>
+ <p>Automatic provider sending requires a secure server-side/Edge Function integration.</p>`;
+}
+</script>
+</body></html>

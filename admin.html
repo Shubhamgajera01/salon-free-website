@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Appointment Dashboard | Infinity The Family Salon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body><script src="js/auth.js"></script>
+<header class="admin-top">
+  <a href="index.html" class="brand"><span>∞</span><b>INFINITY</b><small>The Family Salon</small></a>
+  <div class="top-right"><span class="demo-badge">DEMO DASHBOARD</span><a href="index.html">View Website ↗</a></div>
+</header>
+<main class="admin-wrap">
+<section class="admin-head">
+<div><span class="eyebrow">OWNER VIEW</span><h1>Appointments</h1><p>Manage incoming appointment requests and their status.</p></div>
+<button id="clearDemo" class="danger">Clear Demo Data</button>
+</section>
+
+<section class="stats">
+<div><small>Pending</small><strong id="pendingCount">0</strong></div>
+<div><small>Confirmed</small><strong id="confirmedCount">0</strong></div>
+<div><small>Today</small><strong id="todayCount">0</strong></div>
+<div><small>Total</small><strong id="totalCount">0</strong></div>
+</section>
+
+<section class="toolbar">
+<select id="statusFilter"><option value="all">All statuses</option><option value="pending">Pending</option><option value="confirmed">Confirmed</option><option value="completed">Completed</option><option value="cancelled">Cancelled</option></select>
+<input id="search" placeholder="Search customer, phone or booking ID">
+</section>
+
+<section class="table-card">
+<div class="table-scroll"><table><thead><tr>
+<th>Booking</th><th>Customer</th><th>Service</th><th>Date</th><th>Time</th><th>Status</th><th>Action</th>
+</tr></thead><tbody id="rows"></tbody></table></div>
+<div id="empty" class="empty">No appointment requests yet.</div>
+</section>
+
+<section class="security-note">
+<b>Production security:</b> This dashboard currently reads demo bookings from the browser. Before publishing it, add staff authentication and connect it to the protected database API.
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script><script src="js/supabase-client.js"></script><script src="js/admin.js"></script>
+<script>
+(async()=>{
+ try{
+  const session=await InfinityAuth.getSession();
+  if(!session){location.replace("admin-login.html");return;}
+  const profile=await InfinityAuth.getProfile(session.user.id);
+  if(!profile){await InfinityAuth.logout();location.replace("admin-login.html");return;}
+  const b=document.createElement("button");b.id="logoutBtn";b.className="action";b.textContent="Logout";b.style.margin="12px";b.onclick=async()=>{await InfinityAuth.logout();location.replace("admin-login.html")};document.body.prepend(b);
+ }catch(e){location.replace("admin-login.html")}
+})();
+</script></body>
+</html>

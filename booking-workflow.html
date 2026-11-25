@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Booking Workflow | Infinity The Family Salon</title>
+<link rel="stylesheet" href="css/style.css"><style>
+body{background:#f8f2e9;color:#38291f;font-family:Arial,sans-serif}.wrap{max-width:900px;margin:90px auto;padding:30px}
+.card{background:#fff;padding:30px;border-radius:24px;border:1px solid #e5d9ce;margin:15px 0}.step{display:flex;gap:15px;align-items:flex-start}.num{min-width:36px;height:36px;border-radius:50%;background:#b28a50;color:#fff;display:grid;place-items:center;font-weight:bold}
+h1{font-family:Georgia,serif;font-size:45px}.muted{color:#7d6d62;line-height:1.7}.badge{display:inline-block;padding:7px 11px;background:#f1e4d4;border-radius:50px;font-size:11px;font-weight:bold}
+</style></head><body><div class="wrap">
+<span class="badge">PHASE 6</span><h1>Appointment workflow</h1><p class="muted">The frontend now collects a structured appointment request and prepares customer-ready communication. No private business contact details are hardcoded.</p>
+<div class="card"><div class="step"><span class="num">1</span><div><b>Customer selects service</b><p class="muted">Audience → service → date → time.</p></div></div></div>
+<div class="card"><div class="step"><span class="num">2</span><div><b>Customer enters details</b><p class="muted">Name, mobile number, optional email and notes are validated in the browser.</p></div></div></div>
+<div class="card"><div class="step"><span class="num">3</span><div><b>Request is generated</b><p class="muted">A booking ID is created and the request is stored locally for the current demo device.</p></div></div></div>
+<div class="card"><div class="step"><span class="num">4</span><div><b>Owner communication</b><p class="muted">The customer can send the prepared request through WhatsApp or email. Production deployment should connect these actions to the verified salon number/email or a backend.</p></div></div></div>
+</div></body></html>
